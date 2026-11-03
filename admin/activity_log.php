@@ -36,7 +36,7 @@ $logs = $stmt->fetchAll();
 
 $actions = $pdo->query("SELECT DISTINCT action FROM activity_log ORDER BY action")->fetchAll(PDO::FETCH_COLUMN);
 ?>
-<div class="col-lg-10 p-4">
+<div class="p-4">
     <h4 class="mb-3">Activity Log</h4>
 
     <form method="get" class="card mb-3"><div class="card-body row g-2">
