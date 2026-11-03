@@ -1,0 +1,14 @@
+# Disable PHP execution in uploads
+<FilesMatch "\.(php|phtml|php3|php4|php5|php7|phps)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Prevent directory listing
+Options -Indexes
+
+# Only serve images and documents
+<FilesMatch "\.(jpg|jpeg|png|gif|webp|pdf)$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>

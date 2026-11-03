@@ -1,0 +1,54 @@
+hsms/
+├── config/
+│   ├── db.php               ← PDO connection
+│   └── constants.php        ← global constants & arrays
+├── includes/
+│   ├── functions.php        ← all helper functions
+│   ├── auth.php             ← session bootstrap & role guards
+│   ├── header.php           ← shared HTML head + top navbar
+│   ├── footer.php           ← shared closing HTML + scripts
+│   ├── sidebar_admin.php
+│   ├── sidebar_teacher.php
+│   └── sidebar_student.php
+├── auth/
+│   ├── login.php
+│   └── logout.php
+├── index.php                ← entry / redirect
+└── check.php                ← temporary DB health check
+
+==========================================================
+==========================================================
+==========================================================
+
+hsms/
+├── admin/
+│   ├── dashboard.php            ← real dashboard with stats
+│   ├── students.php             ← placeholder (Phase 5 builds it)
+│   ├── teachers.php             ← placeholder
+│   ├── classes.php              ← placeholder
+│   ├── subjects.php             ← placeholder
+│   ├── grades_manage.php        ← placeholder
+│   ├── news.php                 ← placeholder
+│   ├── fees.php                 ← placeholder
+│   ├── transactions.php         ← placeholder
+│   ├── excuses.php              ← placeholder
+│   ├── reports.php              ← placeholder
+│   ├── activity_log.php         ← placeholder
+│   └── settings.php             ← placeholder
+├── teacher/
+│   ├── dashboard.php            ← real dashboard
+│   ├── my_classes.php           ← placeholder
+│   ├── submit_grades.php        ← placeholder
+│   ├── assignments.php          ← placeholder
+│   ├── reports_against_me.php   ← placeholder
+│   └── profile.php              ← placeholder
+├── student/
+│   ├── dashboard.php            ← real dashboard
+│   ├── grades.php               ← placeholder
+│   ├── assignments.php          ← placeholder
+│   ├── excuses.php              ← placeholder
+│   ├── report_teacher.php       ← placeholder
+│   ├── fees.php                 ← placeholder
+│   └── profile.php              ← placeholder
+└── includes/
+    └── placeholder.php          ← shared "coming soon" template
