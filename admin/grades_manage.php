@@ -136,7 +136,7 @@ $audit = $pdo->prepare("SELECT ga.*, st.first_name, st.last_name, u.username
 $audit->execute([$subjectId, $session]);
 $auditRows = $audit->fetchAll();
 ?>
-<div class="col-lg-10 p-4">
+<div class="p-4">
     <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
         <div>
             <h4 class="mb-1">Grade Management (Admin Override)</h4>

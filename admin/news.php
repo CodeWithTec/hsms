@@ -58,7 +58,7 @@ if ($action === 'edit' && $id > 0) {
 $news = $pdo->query("SELECT n.*, u.username FROM news n JOIN users u ON u.id=n.author_id
                      ORDER BY n.pinned DESC, n.created_at DESC")->fetchAll();
 ?>
-<div class="col-lg-10 p-4">
+<div class="p-4">
 
 <?php if ($action === 'list'): ?>
     <div class="d-flex justify-content-between mb-3">

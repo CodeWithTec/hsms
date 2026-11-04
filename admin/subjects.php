@@ -58,7 +58,7 @@ $subjects = $pdo->query("SELECT s.*,
                          (SELECT COUNT(*) FROM class_subject_teacher WHERE subject_id=s.id) AS teacher_count
                          FROM subjects s ORDER BY name")->fetchAll();
 ?>
-<div class="col-lg-10 p-4">
+<div class="p-4">
     <h4 class="mb-3">Subjects</h4>
     <?= show_flash() ?>
     <div class="row g-3">

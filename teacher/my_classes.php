@@ -36,7 +36,7 @@ foreach ($assignments as $a) {
     }
 }
 ?>
-<div class="col-lg-10 p-4">
+<div class="p-4">
     <h4 class="mb-1">My Classes</h4>
     <small class="text-muted d-block mb-3">Session <?= e($session) ?> · <?= count($assignments) ?> assignments</small>
     <?= show_flash() ?>

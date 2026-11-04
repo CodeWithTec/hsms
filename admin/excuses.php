@@ -46,7 +46,7 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute($params);
 $excuses = $stmt->fetchAll();
 ?>
-<div class="col-lg-10 p-4">
+<div class=" p-4">
     <h4 class="mb-3">Excuse Requests</h4>
     <?= show_flash() ?>
 

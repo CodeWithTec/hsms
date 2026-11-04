@@ -40,9 +40,9 @@ $news = $pdo->query("SELECT * FROM news ORDER BY pinned DESC, created_at DESC LI
 // Recent activity
 $logs = $pdo->query("SELECT * FROM activity_log ORDER BY created_at DESC LIMIT 8")->fetchAll();
 ?>
-<div class="col-lg-10 p-4 margin-left-200 dashboard">
+<div class="col-lg-10 margin-left-250 p-2 dashboard">
   <?= show_flash() ?>
-  <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+  <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2 top-0">
     <div>
       <h4 class="mb-0">Admin Dashboard</h4>
       <small class="text-muted"><?= e($session) ?> &middot; Semester <?= e($s['current_semester']) ?> &middot; <?= e(MARKING_PERIODS[$s['current_marking']]) ?></small>
@@ -116,7 +116,7 @@ $logs = $pdo->query("SELECT * FROM activity_log ORDER BY created_at DESC LIMIT 8
   </div>
 
   <!-- Financial summary -->
-<div class="row g-3 mt-1">
+<div class="row g-3 mt-2">
     <div class="col-lg-6">
         <div class="card h-100">
             <div class="card-header"><strong>Financial Summary (<?= e($session) ?>)</strong></div>
@@ -208,4 +208,5 @@ $logs = $pdo->query("SELECT * FROM activity_log ORDER BY created_at DESC LIMIT 8
     </div>
   </div>
 </div>
+
 <?php require_once __DIR__ . '/../includes/footer.php'; ?>

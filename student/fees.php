@@ -25,7 +25,7 @@ $rows = $fees->fetchAll();
 $totalDue = 0; $totalPaid = 0;
 foreach ($rows as $r) { $totalDue += (float)$r['amount_due']; $totalPaid += (float)$r['amount_paid']; }
 ?>
-<div class="col-lg-10 p-4">
+<div class="p-4">
     <h4 class="mb-3">My Fees</h4>
 
     <div class="row g-3 mb-4">

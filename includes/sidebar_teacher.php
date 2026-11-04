@@ -1,5 +1,5 @@
 <div class="col-lg-2 d-none d-lg-block bg-light min-vh-100 p-0 border-end">
-  <ul class="nav flex-column p-2">
+  <ul class="nav flex-column p-2 gap-3 sidebar">
     <li><a class="nav-link" href="<?= BASE_URL ?>teacher/dashboard.php"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
     <li><a class="nav-link" href="<?= BASE_URL ?>teacher/my_classes.php"><i class="bi bi-easel"></i> My Classes</a></li>
     <li><a class="nav-link" href="<?= BASE_URL ?>teacher/submit_grades.php"><i class="bi bi-clipboard-data"></i> Grades</a></li>

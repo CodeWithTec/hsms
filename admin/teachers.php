@@ -129,7 +129,7 @@ if ($action === 'list') {
     $teachers = $list->fetchAll();
 }
 ?>
-<div class="col-lg-10 p-4">
+<div class="p-4">
 
 <?php if ($action === 'list'): ?>
     <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">

@@ -1,29 +1,60 @@
-body { background: #f4f6f9; font-size: 0.95rem; }
-.nav-link { color: #333; border-radius: 6px; margin-bottom: 0; padding-top: 0rem; padding-bottom: 0rem; }
-.nav-link:hover, .nav-link.active { background: #e9ecef; color: #0d6efd; }
-.card { border: 0; box-shadow: 0 1px 4px rgba(0,0,0,.06); border-radius: 10px; }
+/* ==========================================================
+   HSMS Global Styles
+   ========================================================== */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #f4f6f9;
+    font-size: 0.95rem;
+}
+
+/* Sidebar + content row: consistent height, no gap */
+.min-vh-100 { min-height: 100vh; }
+
+/* Sidebar */
+.nav-link {
+    color: #333;
+    border-radius: 6px;
+    margin-bottom: -15px;
+    padding: 8px 12px;
+}
+.nav-link:hover,
+.nav-link.active {
+    background: #e9ecef;
+    color: #0d6efd;
+}
+
+/* Cards */
+.card {
+    border: 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,.06);
+    border-radius: 10px;
+}
+
+/* Tables */
 .table-responsive { border-radius: 8px; }
 
-/* desktop styles */
-@media (min-width: 992px) {
-    .sidebar { display: flex; width: 200px; position: fixed; top: 10; left: 0; background-color: #f8f9fa; border-right: 1px solid #dee2e6; }
-    
-    .dashboard { margin-left: 200px; margin-top: 0; width: calc(100% - 200px); }
-}
-
-
-
+/* Main content column (col-lg-10) — remove extra top padding
+   on smaller screens */
 @media (max-width: 991px) {
     .min-vh-100 { min-height: auto !important; }
+    .col-lg-10 { padding-top: 1rem !important; }
 }
 
-
-
-
+/* Print */
 @media print {
-    .navbar, .col-lg-2, .col-lg-10 > .d-print-none,
-    .btn, .sidebar, nav { display: none !important; }
-    .col-lg-10 { width: 100% !important; }
+    .navbar, .col-lg-2, .d-print-none, .btn, nav { display: none !important; }
+    .col-lg-10 { width: 100% !important; padding: 0 !important; }
     body { background: #fff !important; }
     .card { box-shadow: none; border: 1px solid #ccc; }
+}
+
+/* Force dashboards to start at top with no gap */
+.col-lg-10.p-4 { padding-top: 1.25rem !important; }
+
+/* media query for the large screens to have all the content aligned */
+@media (min-width: 992px) {
+    .col-lg-10.p-4 { padding-top: 1.25rem !important; }
+    /* .col-lg-10 { margin-left: 230px !important; } */
 }

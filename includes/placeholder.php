@@ -18,5 +18,7 @@ require_once __DIR__ . '/sidebar_' . $role . '.php';
       <p class="text-muted mb-0">This module will be built in the next phase.</p>
     </div>
   </div>
-</div>
-<?php require_once __DIR__ . '/footer.php'; ?>
+
+
+
+

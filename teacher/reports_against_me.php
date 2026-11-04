@@ -23,7 +23,7 @@ $list = $pdo->prepare("SELECT r.*, st.first_name AS fn, st.last_name AS ln, sub.
 $list->execute([$tid]);
 $reports = $list->fetchAll();
 ?>
-<div class="col-lg-10 p-4">
+<div class="p-4">
     <h4 class="mb-3">Reports Against Me</h4>
     <p class="text-muted small">Complaints students have submitted about you. Reports marked anonymous hide the student identity.</p>
     <?php if (empty($reports)): ?>

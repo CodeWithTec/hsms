@@ -92,7 +92,7 @@ $list = $pdo->prepare("SELECT a.*, c.name AS class_name, sub.name AS subject_nam
 $list->execute([$tid]);
 $assignments = $list->fetchAll();
 ?>
-<div class="col-lg-10 p-4">
+<div class="p-4">
 <?php if ($action === 'list'): ?>
     <div class="d-flex justify-content-between mb-3">
         <h4 class="mb-0">Assignments</h4>

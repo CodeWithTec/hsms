@@ -101,7 +101,7 @@ $T = $totals->fetch();
 // For "add fee" form
 $allStudents = $pdo->query("SELECT id, first_name, last_name, student_id FROM students ORDER BY last_name")->fetchAll();
 ?>
-<div class="col-lg-10 p-4">
+<div class="p-4">
     <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
         <h4 class="mb-0">Fees</h4>
         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addFeeModal">

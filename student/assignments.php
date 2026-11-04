@@ -41,7 +41,7 @@ $list = $pdo->prepare("SELECT a.*, sub.name AS subject_name, t.first_name, t.las
 $list->execute([$sid, $student['class_id']]);
 $assignments = $list->fetchAll();
 ?>
-<div class="col-lg-10 p-4">
+<div class="p-4">
     <h4 class="mb-3">My Assignments</h4>
     <?= show_flash() ?>
 

@@ -53,7 +53,7 @@ $sem1 = ['MP1','MP2','MP3','EXAM1'];
 $sem2 = ['MP4','MP5','MP6','EXAM2'];
 $printMode = get('print') === '1';
 ?>
-<div class="col-lg-10 p-4">
+<div class="p-4">
     <?php if (!$printMode): ?>
     <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2 d-print-none">
         <div>

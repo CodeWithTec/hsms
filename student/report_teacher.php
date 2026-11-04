@@ -69,7 +69,7 @@ $mine = $pdo->prepare("SELECT r.*, t.first_name, t.last_name, sub.name AS subjec
 $mine->execute([$sid]);
 $myReports = $mine->fetchAll();
 ?>
-<div class="col-lg-10 p-4">
+<div class="p-4">
     <h4 class="mb-3">Report a Teacher</h4>
     <p class="text-muted small">Reports go directly to the admin. You may submit anonymously.</p>
     <?= show_flash() ?>

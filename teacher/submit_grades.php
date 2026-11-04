@@ -120,7 +120,7 @@ $comboOptions = $options->fetchAll();
 $sem1MPs = ['MP1','MP2','MP3','EXAM1'];
 $sem2MPs = ['MP4','MP5','MP6','EXAM2'];
 ?>
-<div class="col-lg-10 p-4">
+<div class="p-4">
     <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
         <div>
             <h4 class="mb-1">Grade Entry</h4>

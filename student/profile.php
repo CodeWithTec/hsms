@@ -51,7 +51,7 @@ $classQ = $pdo->prepare("SELECT name FROM classes WHERE id=?");
 $classQ->execute([$student['class_id'] ?? 0]);
 $className = $classQ->fetchColumn();
 ?>
-<div class="col-lg-10 p-4">
+<div class="p-4">
     <h4 class="mb-3">My Profile</h4>
     <?= show_flash() ?>
     <ul class="nav nav-tabs mb-3">

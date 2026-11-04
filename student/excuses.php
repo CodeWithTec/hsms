@@ -45,7 +45,7 @@ $list = $pdo->prepare("SELECT * FROM excuses WHERE student_id=? ORDER BY created
 $list->execute([$sid]);
 $excuses = $list->fetchAll();
 ?>
-<div class="col-lg-10 p-4">
+<div class="p-4">
 <?php if ($action === 'list'): ?>
     <div class="d-flex justify-content-between mb-3">
         <h4 class="mb-0">My Excuses</h4>

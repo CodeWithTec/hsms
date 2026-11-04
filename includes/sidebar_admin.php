@@ -1,5 +1,5 @@
 <div class="col-lg-2 d-none d-lg-block bg-light min-vh-100 p-0 border-end">
-  <ul class="nav flex-column p-2">
+  <ul class="nav flex-column p-2 gap-3 sidebar">
     <li><a class="nav-link" href="<?= BASE_URL ?>admin/dashboard.php"><i class="bi bi-speedometer2"></i> Dashboard</a></li>
     <li><a class="nav-link" href="<?= BASE_URL ?>admin/students.php"><i class="bi bi-people"></i> Students</a></li>
     <li><a class="nav-link" href="<?= BASE_URL ?>admin/teachers.php"><i class="bi bi-person-badge"></i> Teachers</a></li>

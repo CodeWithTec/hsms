@@ -1,12 +1,11 @@
 <?php
 $pageTitle = 'Manage Students';
 $section   = 'Admin · Students';
-require_once __DIR__ . '/../includes/placeholder.php';
 
 require_once __DIR__ . '/../includes/auth.php';
 require_role('admin');
-require_once __DIR__ . '/../includes/header.php';
-require_once __DIR__ . '/../includes/sidebar_admin.php';
+// require_once __DIR__ . '/../includes/header.php';
+// require_once __DIR__ . '/../includes/sidebar_admin.php';
 
 global $pdo;
 $s = get_settings();
@@ -34,6 +33,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         flash_redirect('error', 'Student not found.', 'admin/students.php');
     }
+
+
 
     // ---- CREATE or UPDATE ----
     if ($formAction === 'save') {
@@ -175,9 +176,17 @@ if ($action === 'list') {
     $list->execute($params);
     $students = $list->fetchAll();
 }
+
+     require_once __DIR__ . '/../includes/placeholder.php';
+     require_once __DIR__ . '/../includes/header.php';
+     require_once __DIR__ . '/../includes/sidebar_admin.php';
+
 ?>
-<div class="dashboard">
-<div class="col-lg-10 p-4">
+
+
+
+<!-- <div class="dashboard display-flex"> --->
+<div class=" p-4"> 
 
 <?php if ($action === 'list'): ?>
     <!-- ========================================================= -->
@@ -405,6 +414,5 @@ if ($action === 'list') {
     </div>
 <?php endif; ?>
 
-</div>
 </div>
 <?php require_once __DIR__ . '/../includes/footer.php'; ?>
