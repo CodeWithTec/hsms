@@ -1,14 +1,11 @@
 <?php
 $pageTitle = 'My Profile';
 $section   = 'Student · Profile';
-require_once __DIR__ . '/../includes/placeholder.php';
 
 
 
 require_once __DIR__ . '/../includes/auth.php';
 require_role('student');
-require_once __DIR__ . '/../includes/header.php';
-require_once __DIR__ . '/../includes/sidebar_student.php';
 
 global $pdo;
 $student = current_student();
@@ -50,6 +47,13 @@ $student = current_student();
 $classQ = $pdo->prepare("SELECT name FROM classes WHERE id=?");
 $classQ->execute([$student['class_id'] ?? 0]);
 $className = $classQ->fetchColumn();
+
+
+
+require_once __DIR__ . '/../includes/placeholder.php';
+require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../includes/sidebar_student.php';
+
 ?>
 <div class="p-4">
     <h4 class="mb-3">My Profile</h4>

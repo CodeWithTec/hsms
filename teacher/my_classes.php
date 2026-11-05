@@ -1,13 +1,13 @@
 <?php
 $pageTitle = 'My Classes';
 $section   = 'Teacher · Classes';
-require_once __DIR__ . '/../includes/placeholder.php';
+// require_once __DIR__ . '/../includes/placeholder.php';
 
 
 require_once __DIR__ . '/../includes/auth.php';
 require_role('teacher');
-require_once __DIR__ . '/../includes/header.php';
-require_once __DIR__ . '/../includes/sidebar_teacher.php';
+// require_once __DIR__ . '/../includes/header.php';
+// require_once __DIR__ . '/../includes/sidebar_teacher.php';
 
 global $pdo;
 $s = get_settings();
@@ -35,6 +35,12 @@ foreach ($assignments as $a) {
         $rosters[$a['class_id']] = $stmt->fetchAll();
     }
 }
+
+
+
+require_once __DIR__ . '/../includes/placeholder.php';
+require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../includes/sidebar_teacher.php';
 ?>
 <div class="p-4">
     <h4 class="mb-1">My Classes</h4>

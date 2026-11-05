@@ -1,14 +1,14 @@
 <?php
 $pageTitle = 'My Assignments';
 $section   = 'Student · Assignments';
-require_once __DIR__ . '/../includes/placeholder.php';
+// require_once __DIR__ . '/../includes/placeholder.php';
 
 
 
 require_once __DIR__ . '/../includes/auth.php';
 require_role('student');
-require_once __DIR__ . '/../includes/header.php';
-require_once __DIR__ . '/../includes/sidebar_student.php';
+// require_once __DIR__ . '/../includes/header.php';
+// require_once __DIR__ . '/../includes/sidebar_student.php';
 
 global $pdo;
 $s = get_settings();
@@ -40,6 +40,13 @@ $list = $pdo->prepare("SELECT a.*, sub.name AS subject_name, t.first_name, t.las
                        ORDER BY a.due_date IS NULL, a.due_date ASC, a.created_at DESC");
 $list->execute([$sid, $student['class_id']]);
 $assignments = $list->fetchAll();
+
+
+
+
+require_once __DIR__ . '/../includes/placeholder.php';
+require_once __DIR__ . '/../includes/header.php';
+// require_once __DIR__ . '/../includes/sidebar_teacher.php';
 ?>
 <div class="p-4">
     <h4 class="mb-3">My Assignments</h4>

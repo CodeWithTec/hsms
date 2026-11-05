@@ -1,12 +1,12 @@
 <?php
 $pageTitle = 'Manage Classes';
 $section   = 'Admin · Classes';
-require_once __DIR__ . '/../includes/placeholder.php';
+// require_once __DIR__ . '/../includes/placeholder.php';
 
 require_once __DIR__ . '/../includes/auth.php';
 require_role('admin');
-require_once __DIR__ . '/../includes/header.php';
-require_once __DIR__ . '/../includes/sidebar_admin.php';
+// require_once __DIR__ . '/../includes/header.php';
+// require_once __DIR__ . '/../includes/sidebar_admin.php';
 
 global $pdo;
 
@@ -55,6 +55,12 @@ if ($eid = (int)get('edit', 0)) {
 
 $classes = $pdo->query("SELECT c.*, (SELECT COUNT(*) FROM students WHERE class_id=c.id) AS student_count
                         FROM classes c ORDER BY grade_level, section")->fetchAll();
+
+
+
+     require_once __DIR__ . '/../includes/placeholder.php';
+     require_once __DIR__ . '/../includes/header.php';
+     require_once __DIR__ . '/../includes/sidebar_admin.php';
 ?>
 <div class="p-4">
     <div class="d-flex justify-content-between align-items-center mb-3">

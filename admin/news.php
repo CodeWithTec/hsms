@@ -1,15 +1,15 @@
 <?php
 $pageTitle = 'News & Announcements';
 $section   = 'Admin · News';
-require_once __DIR__ . '/../includes/placeholder.php';
+// require_once __DIR__ . '/../includes/placeholder.php';
 
 
 
 
 require_once __DIR__ . '/../includes/auth.php';
 require_role('admin');
-require_once __DIR__ . '/../includes/header.php';
-require_once __DIR__ . '/../includes/sidebar_admin.php';
+// require_once __DIR__ . '/../includes/header.php';
+// require_once __DIR__ . '/../includes/sidebar_admin.php';
 
 global $pdo;
 $action = get('action','list');
@@ -57,6 +57,13 @@ if ($action === 'edit' && $id > 0) {
 
 $news = $pdo->query("SELECT n.*, u.username FROM news n JOIN users u ON u.id=n.author_id
                      ORDER BY n.pinned DESC, n.created_at DESC")->fetchAll();
+
+
+
+
+     require_once __DIR__ . '/../includes/placeholder.php';
+     require_once __DIR__ . '/../includes/header.php';
+     require_once __DIR__ . '/../includes/sidebar_admin.php';
 ?>
 <div class="p-4">
 

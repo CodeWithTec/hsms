@@ -1,14 +1,14 @@
 <?php
 $pageTitle = 'Fees';
 $section   = 'Admin · Fees';
-require_once __DIR__ . '/../includes/placeholder.php';
+// require_once __DIR__ . '/../includes/placeholder.php';
 
 
 
 require_once __DIR__ . '/../includes/auth.php';
 require_role('admin');
-require_once __DIR__ . '/../includes/header.php';
-require_once __DIR__ . '/../includes/sidebar_admin.php';
+// require_once __DIR__ . '/../includes/header.php';
+// require_once __DIR__ . '/../includes/sidebar_admin.php';
 
 global $pdo;
 $s = get_settings();
@@ -77,11 +77,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // ---- LOAD ----
 $filterSession = get('fsess',$session);
 $filterStatus = get('status','');
+$filterStudentId = trim(get('student_id',''));
 
 $where = "WHERE f.session=?"; $params = [$filterSession];
 if (in_array($filterStatus, ['unpaid','partial','paid'], true)) {
     $where .= " AND f.status=?";
     $params[] = $filterStatus;
+}
+if ($filterStudentId !== '') {
+  $where .= " AND st.student_id LIKE ?";
+  $params[] = '%' . $filterStudentId . '%';
 }
 
 $q = $pdo->prepare("SELECT f.*, st.first_name, st.last_name, st.student_id AS st_code, c.name AS class_name
@@ -100,6 +105,15 @@ $T = $totals->fetch();
 
 // For "add fee" form
 $allStudents = $pdo->query("SELECT id, first_name, last_name, student_id FROM students ORDER BY last_name")->fetchAll();
+
+
+
+
+
+
+     require_once __DIR__ . '/../includes/placeholder.php';
+     require_once __DIR__ . '/../includes/header.php';
+     require_once __DIR__ . '/../includes/sidebar_admin.php';
 ?>
 <div class="p-4">
     <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
@@ -128,11 +142,11 @@ $allStudents = $pdo->query("SELECT id, first_name, last_name, student_id FROM st
 
     <div class="card mb-3"><div class="card-body">
         <form method="get" class="row g-2">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <label class="form-label small">Session</label>
                 <input type="text" name="fsess" class="form-control form-control-sm" value="<?= e($filterSession) ?>">
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <label class="form-label small">Status</label>
                 <select name="status" class="form-select form-select-sm">
                     <option value="">All</option>
@@ -141,9 +155,14 @@ $allStudents = $pdo->query("SELECT id, first_name, last_name, student_id FROM st
                     <?php endforeach; ?>
                 </select>
             </div>
-            <div class="col-md-4 d-flex align-items-end">
+                <div class="col-md-3">
+                  <label class="form-label small">Student ID</label>
+                  <input type="text" name="student_id" class="form-control form-control-sm" value="<?= e($filterStudentId) ?>" placeholder="Search student ID">
+                </div>
+                <div class="col-md-3 d-flex align-items-end">
                 <button class="btn btn-sm btn-outline-primary w-100">Filter</button>
             </div>
+            
         </form>
     </div></div>
 

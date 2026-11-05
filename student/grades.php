@@ -49,6 +49,34 @@ if ($subjects) {
     }
 }
 
+// A student passes when every subject has a yearly average of at least 70.
+$promotionStatus = 'Promotion status pending completion of all yearly grades.';
+$yearlyTotal = 0;
+$yearlyCount = 0;
+$hasFailed = false;
+foreach ($subjects as $subject) {
+    $yearlyAverage = $computedData[(int)$subject['id']]['yearly_avg'] ?? null;
+    if ($yearlyAverage === null || $yearlyAverage === '') {
+        continue;
+    }
+    $yearlyAverage = (float)$yearlyAverage;
+    $yearlyTotal += $yearlyAverage;
+    $yearlyCount++;
+    if ($yearlyAverage < 70) {
+        $hasFailed = true;
+    }
+}
+if ($yearlyCount === count($subjects) && $yearlyCount > 0) {
+    if ($hasFailed) {
+        $promotionStatus = 'Failed — summer school is required.';
+    } elseif (($yearlyTotal / $yearlyCount) >= 90) {
+        $promotionStatus = 'Passed with distinction.';
+    } else {
+        $promotionStatus = 'Passed.';
+        
+    }
+}
+
 $sem1 = ['MP1','MP2','MP3','EXAM1'];
 $sem2 = ['MP4','MP5','MP6','EXAM2'];
 $printMode = get('print') === '1';
@@ -139,5 +167,83 @@ $printMode = get('print') === '1';
             </div>
         <?php endif; ?>
     <?php endif; ?>
+
+
+    <!-- ==============================
+     LETTER FOOTER: STAMP & SIGNATURE
+================================ -->
+
+<div class="container mt-0 pt-5">
+
+    <div class="row align-items-end">
+
+        <!-- SCHOOL STAMP -->
+        <div class="col-md-4 text-center text-md-start">
+
+            <div class="signature-box">
+
+                <!-- School Stamp -->
+                <img 
+                    src="../assets/uploads/school/stamp.png"
+                    alt="School Official Stamp"
+                    class="school-stamp"
+                >
+
+                <p class="mt-2 mb-0">
+                    <strong>Official School Stamp</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+           <!-- Promotion Statement -->
+        <div class="col-md-4 text-center text-md-end">
+
+            <div class="promotion-statement text-center border rounded p-3 border-2">
+
+                <p class="mb-0">
+                    <strong>Promotion Statement</strong>
+                </p>
+
+                <small class="text-uppercase fw-bold fs-6 <?= in_array($promotionStatus, ['Passed.', 'Passed with distinction.'], true) ? 'text-success' : 'text-danger' ?>">
+                    <?= e($promotionStatus) ?>
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRINCIPAL SIGNATURE -->
+        <div class="col-md-4 text-center text-md-end">
+
+            <div class="signature-box">
+
+                <!-- Principal Signature Image -->
+                <img 
+                    src="../assets/uploads/school/signature.png" 
+                    alt="Principal Signature"
+                    class="principal-signature"
+                >
+
+                <!-- Signature Line -->
+                <div class="signature-line"></div>
+
+                <p class="mb-0">
+                    <strong>Office of the Principal</strong>
+                </p>
+
+                <small class="text-muted">
+                    <?= e($s['school_name']) ?> · <?= e($s['school_address']) ?>
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 </div>
 <?php require_once __DIR__ . '/../includes/footer.php'; ?>

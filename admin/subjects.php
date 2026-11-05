@@ -1,14 +1,14 @@
 <?php
 $pageTitle = 'Manage Subjects';
 $section   = 'Admin · Subjects';
-require_once __DIR__ . '/../includes/placeholder.php';
+// require_once __DIR__ . '/../includes/placeholder.php';
 
 
 
 require_once __DIR__ . '/../includes/auth.php';
 require_role('admin');
-require_once __DIR__ . '/../includes/header.php';
-require_once __DIR__ . '/../includes/sidebar_admin.php';
+// require_once __DIR__ . '/../includes/header.php';
+// require_once __DIR__ . '/../includes/sidebar_admin.php';
 
 global $pdo;
 
@@ -57,6 +57,12 @@ if ($eid = (int)get('edit',0)) {
 $subjects = $pdo->query("SELECT s.*,
                          (SELECT COUNT(*) FROM class_subject_teacher WHERE subject_id=s.id) AS teacher_count
                          FROM subjects s ORDER BY name")->fetchAll();
+
+
+
+     require_once __DIR__ . '/../includes/placeholder.php';
+     require_once __DIR__ . '/../includes/header.php';
+     require_once __DIR__ . '/../includes/sidebar_admin.php';
 ?>
 <div class="p-4">
     <h4 class="mb-3">Subjects</h4>

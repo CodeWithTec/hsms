@@ -1,14 +1,11 @@
 <?php
 $pageTitle = 'Assignments';
 $section   = 'Teacher · Assignments';
-require_once __DIR__ . '/../includes/placeholder.php';
 
 
 
 require_once __DIR__ . '/../includes/auth.php';
 require_role('teacher');
-require_once __DIR__ . '/../includes/header.php';
-require_once __DIR__ . '/../includes/sidebar_teacher.php';
 
 global $pdo;
 $s = get_settings();
@@ -91,6 +88,12 @@ $list = $pdo->prepare("SELECT a.*, c.name AS class_name, sub.name AS subject_nam
                        ORDER BY a.created_at DESC");
 $list->execute([$tid]);
 $assignments = $list->fetchAll();
+
+
+require_once __DIR__ . '/../includes/placeholder.php';
+require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../includes/sidebar_teacher.php';
+
 ?>
 <div class="p-4">
 <?php if ($action === 'list'): ?>

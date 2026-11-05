@@ -1,13 +1,13 @@
 <?php
 $pageTitle = 'Transactions';
 $section   = 'Admin · Income & Expenses';
-require_once __DIR__ . '/../includes/placeholder.php';
+// require_once __DIR__ . '/../includes/placeholder.php';
 
 
 require_once __DIR__ . '/../includes/auth.php';
 require_role('admin');
-require_once __DIR__ . '/../includes/header.php';
-require_once __DIR__ . '/../includes/sidebar_admin.php';
+// require_once __DIR__ . '/../includes/header.php';
+// require_once __DIR__ . '/../includes/sidebar_admin.php';
 
 global $pdo;
 $s = get_settings();
@@ -52,6 +52,11 @@ foreach ($rows as $r) {
     if ($r['type']==='income') $income += (float)$r['amount'];
     else $expense += (float)$r['amount'];
 }
+
+     require_once __DIR__ . '/../includes/placeholder.php';
+     require_once __DIR__ . '/../includes/header.php';
+     require_once __DIR__ . '/../includes/sidebar_admin.php';
+
 ?>
 <div class="p-4">
     <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">

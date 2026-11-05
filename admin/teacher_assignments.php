@@ -1,8 +1,12 @@
 <?php
+$pageTitle = 'Manage Teacher Assignments';
+$section   = 'Admin · Teacher Assignments';
+
+
 require_once __DIR__ . '/../includes/auth.php';
 require_role('admin');
-require_once __DIR__ . '/../includes/header.php';
-require_once __DIR__ . '/../includes/sidebar_admin.php';
+// require_once __DIR__ . '/../includes/header.php';
+// require_once __DIR__ . '/../includes/sidebar_admin.php';
 
 global $pdo;
 $s = get_settings();
@@ -56,8 +60,14 @@ $sql .= " ORDER BY c.grade_level, c.section, s.name";
 $list = $pdo->prepare($sql);
 $list->execute($params);
 $assignments = $list->fetchAll();
+
+
+
+     require_once __DIR__ . '/../includes/placeholder.php';
+     require_once __DIR__ . '/../includes/header.php';
+     require_once __DIR__ . '/../includes/sidebar_admin.php';
 ?>
-<div class="col-lg-10 p-4">
+<div class="p-4">
     <h4 class="mb-1">Teacher Assignments</h4>
     <small class="text-muted d-block mb-3">Session: <?= e($session) ?> &middot; Assign teachers to class + subject combos</small>
     <?= show_flash() ?>

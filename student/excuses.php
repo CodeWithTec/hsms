@@ -1,13 +1,13 @@
 <?php
 $pageTitle = 'Submit Excuse';
 $section   = 'Student · Excuses';
-require_once __DIR__ . '/../includes/placeholder.php';
+// require_once __DIR__ . '/../includes/placeholder.php';
 
 
 require_once __DIR__ . '/../includes/auth.php';
 require_role('student');
-require_once __DIR__ . '/../includes/header.php';
-require_once __DIR__ . '/../includes/sidebar_student.php';
+// require_once __DIR__ . '/../includes/header.php';
+// require_once __DIR__ . '/../includes/sidebar_student.php';
 
 global $pdo;
 $student = current_student();
@@ -44,6 +44,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $list = $pdo->prepare("SELECT * FROM excuses WHERE student_id=? ORDER BY created_at DESC");
 $list->execute([$sid]);
 $excuses = $list->fetchAll();
+
+
+
+
+require_once __DIR__ . '/../includes/placeholder.php';
+require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../includes/sidebar_student.php';
 ?>
 <div class="p-4">
 <?php if ($action === 'list'): ?>

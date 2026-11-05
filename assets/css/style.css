@@ -58,3 +58,143 @@ html, body {
     .col-lg-10.p-4 { padding-top: 1.25rem !important; }
     /* .col-lg-10 { margin-left: 230px !important; } */
 }
+
+
+
+
+
+
+/* THIS IS FOR THE SCHOOL LETTER HEADS */
+.letterhead {
+            background: #ffffff;
+            max-width: 100%;
+            margin: auto;
+            min-height: 70px;
+            padding: 10px;
+            /* box-shadow: 0 0 15px rgba(0,0,0,0.1); */
+        }
+
+        /* Top School Header */
+        .school-header {
+            border-bottom: 5px solid #0d6efd;
+            padding-bottom: 2px;
+            margin-bottom: 0px;
+        }
+
+        .school-logo {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+
+        .school-name {
+            font-size: 30px;
+            font-weight: 800;
+            color: #0d6efd;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .school-motto {
+            font-size: 15px;
+            font-style: italic;
+            color: #555;
+        }
+
+        .school-info {
+            font-size: 14px;
+            color: #444;
+        }
+
+        /* Letter Information */
+        .letter-date {
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .letter-content {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        .letter-footer {
+            border-top: 3px solid #0d6efd;
+            margin-top: 80px;
+            padding-top: 15px;
+            text-align: center;
+            font-size: 13px;
+            color: #555;
+        }
+
+        /* Print Settings */
+        @media print {
+
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .letterhead {
+                box-shadow: none;
+                max-width: 100%;
+                min-height: auto;
+                padding: 30px;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+        }
+
+
+
+
+        /* ==============================
+   SCHOOL STAMP
+================================ */
+
+.school-stamp {
+    width: 130px;
+    max-height: 130px;
+    object-fit: contain;
+}
+
+
+/* ==============================
+   PRINCIPAL SIGNATURE
+================================ */
+
+.principal-signature {
+    width: 180px;
+    height: 70px;
+    object-fit: contain;
+    object-position: center;
+}
+
+
+/* Signature Line */
+
+.signature-line {
+    width: 220px;
+    border-top: 1px solid #000;
+    margin-top: 5px;
+    margin-left: auto;
+}
+
+
+/* Mobile Responsive */
+
+@media (max-width: 767px) {
+
+    .signature-box {
+        margin-bottom: 40px;
+        text-align: center !important;
+    }
+
+    .signature-line {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}

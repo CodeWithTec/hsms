@@ -49,7 +49,7 @@ $actions = $pdo->query("SELECT DISTINCT action FROM activity_log ORDER BY action
             </select>
         </div>
         <div class="col-md-6">
-            <a href="admin/activity_log.php" class="btn btn-outline-secondary w-100">Reset</a>
+            <a href="activity_log.php" class="btn btn-outline-secondary w-100">Refresh</a>
         </div>
     </div></form>
 

@@ -1,13 +1,13 @@
 <?php
 $pageTitle = 'Teacher Reports';
 $section   = 'Admin · Reports';
-require_once __DIR__ . '/../includes/placeholder.php';
+// require_once __DIR__ . '/../includes/placeholder.php';
 
 
 require_once __DIR__ . '/../includes/auth.php';
 require_role('admin');
-require_once __DIR__ . '/../includes/header.php';
-require_once __DIR__ . '/../includes/sidebar_admin.php';
+// require_once __DIR__ . '/../includes/header.php';
+// require_once __DIR__ . '/../includes/sidebar_admin.php';
 
 global $pdo;
 
@@ -47,6 +47,15 @@ $sql = "SELECT r.*, st.first_name AS st_fn, st.last_name AS st_ln, st.student_id
 $stmt = $pdo->prepare($sql);
 $stmt->execute($params);
 $reports = $stmt->fetchAll();
+
+
+
+
+
+
+     require_once __DIR__ . '/../includes/placeholder.php';
+     require_once __DIR__ . '/../includes/header.php';
+     require_once __DIR__ . '/../includes/sidebar_admin.php';
 ?>
 <div class="p-4">
     <h4 class="mb-3">Teacher Reports</h4>

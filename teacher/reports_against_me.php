@@ -1,13 +1,13 @@
 <?php
 $pageTitle = 'Reports Against Me';
 $section   = 'Teacher · Reports';
-require_once __DIR__ . '/../includes/placeholder.php';
+// require_once __DIR__ . '/../includes/placeholder.php';
 
 
 require_once __DIR__ . '/../includes/auth.php';
 require_role('teacher');
-require_once __DIR__ . '/../includes/header.php';
-require_once __DIR__ . '/../includes/sidebar_teacher.php';
+// require_once __DIR__ . '/../includes/header.php';
+// require_once __DIR__ . '/../includes/sidebar_teacher.php';
 
 global $pdo;
 $teacher = current_teacher();
@@ -22,6 +22,11 @@ $list = $pdo->prepare("SELECT r.*, st.first_name AS fn, st.last_name AS ln, sub.
                        ORDER BY r.created_at DESC");
 $list->execute([$tid]);
 $reports = $list->fetchAll();
+
+
+require_once __DIR__ . '/../includes/placeholder.php';
+require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../includes/sidebar_teacher.php';
 ?>
 <div class="p-4">
     <h4 class="mb-3">Reports Against Me</h4>

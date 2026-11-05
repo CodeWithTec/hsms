@@ -1,13 +1,13 @@
 <?php
 $pageTitle = 'Excuse Requests';
 $section   = 'Admin · Excuses';
-require_once __DIR__ . '/../includes/placeholder.php';
+// require_once __DIR__ . '/../includes/placeholder.php';
 
 
 require_once __DIR__ . '/../includes/auth.php';
 require_role('admin');
-require_once __DIR__ . '/../includes/header.php';
-require_once __DIR__ . '/../includes/sidebar_admin.php';
+// require_once __DIR__ . '/../includes/header.php';
+// require_once __DIR__ . '/../includes/sidebar_admin.php';
 
 global $pdo;
 
@@ -45,6 +45,13 @@ $sql = "SELECT e.*, st.first_name, st.last_name, st.student_id, u.username
 $stmt = $pdo->prepare($sql);
 $stmt->execute($params);
 $excuses = $stmt->fetchAll();
+
+
+
+
+     require_once __DIR__ . '/../includes/placeholder.php';
+     require_once __DIR__ . '/../includes/header.php';
+     require_once __DIR__ . '/../includes/sidebar_admin.php';
 ?>
 <div class=" p-4">
     <h4 class="mb-3">Excuse Requests</h4>

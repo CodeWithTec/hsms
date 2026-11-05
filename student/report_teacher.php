@@ -1,14 +1,14 @@
 <?php
 $pageTitle = 'Report a Teacher';
 $section   = 'Student · Reports';
-require_once __DIR__ . '/../includes/placeholder.php';
+// require_once __DIR__ . '/../includes/placeholder.php';
 
 
 
 require_once __DIR__ . '/../includes/auth.php';
 require_role('student');
-require_once __DIR__ . '/../includes/header.php';
-require_once __DIR__ . '/../includes/sidebar_student.php';
+// require_once __DIR__ . '/../includes/header.php';
+// require_once __DIR__ . '/../includes/sidebar_student.php';
 
 global $pdo;
 $s = get_settings();
@@ -68,6 +68,14 @@ $mine = $pdo->prepare("SELECT r.*, t.first_name, t.last_name, sub.name AS subjec
                        ORDER BY r.created_at DESC");
 $mine->execute([$sid]);
 $myReports = $mine->fetchAll();
+
+
+
+
+
+require_once __DIR__ . '/../includes/placeholder.php';
+require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../includes/sidebar_student.php';
 ?>
 <div class="p-4">
     <h4 class="mb-3">Report a Teacher</h4>

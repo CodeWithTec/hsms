@@ -1,13 +1,13 @@
 <?php
 $pageTitle = 'My Profile';
 $section   = 'Teacher · Profile';
-require_once __DIR__ . '/../includes/placeholder.php';
+// require_once __DIR__ . '/../includes/placeholder.php';
 
 
 require_once __DIR__ . '/../includes/auth.php';
 require_role('teacher');
-require_once __DIR__ . '/../includes/header.php';
-require_once __DIR__ . '/../includes/sidebar_teacher.php';
+// require_once __DIR__ . '/../includes/header.php';
+// require_once __DIR__ . '/../includes/sidebar_teacher.php';
 
 global $pdo;
 $teacher = current_teacher();
@@ -62,6 +62,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $teacher = current_teacher(); // refresh
+
+
+
+require_once __DIR__ . '/../includes/placeholder.php';
+require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../includes/sidebar_teacher.php';
 ?>
 <div class="p-4">
     <h4 class="mb-3">My Profile</h4>

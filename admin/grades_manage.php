@@ -1,13 +1,13 @@
 <?php
 $pageTitle = 'Manage Grades';
 $section   = 'Admin · Grades';
-require_once __DIR__ . '/../includes/placeholder.php';
+// require_once __DIR__ . '/../includes/placeholder.php';
 
 
 require_once __DIR__ . '/../includes/auth.php';
 require_role('admin');
-require_once __DIR__ . '/../includes/header.php';
-require_once __DIR__ . '/../includes/sidebar_admin.php';
+// require_once __DIR__ . '/../includes/header.php';
+// require_once __DIR__ . '/../includes/sidebar_admin.php';
 
 global $pdo;
 $s = get_settings();
@@ -135,6 +135,14 @@ $audit = $pdo->prepare("SELECT ga.*, st.first_name, st.last_name, u.username
                         ORDER BY ga.created_at DESC LIMIT 20");
 $audit->execute([$subjectId, $session]);
 $auditRows = $audit->fetchAll();
+
+
+
+     require_once __DIR__ . '/../includes/placeholder.php';
+     require_once __DIR__ . '/../includes/header.php';
+     require_once __DIR__ . '/../includes/sidebar_admin.php';
+
+
 ?>
 <div class="p-4">
     <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">

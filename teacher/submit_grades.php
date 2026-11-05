@@ -1,13 +1,13 @@
 <?php
 $pageTitle = 'Submit Grades';
 $section   = 'Teacher · Grades';
-require_once __DIR__ . '/../includes/placeholder.php';
+// require_once __DIR__ . '/../includes/placeholder.php';
 
 
 require_once __DIR__ . '/../includes/auth.php';
 require_role('teacher');
-require_once __DIR__ . '/../includes/header.php';
-require_once __DIR__ . '/../includes/sidebar_teacher.php';
+// require_once __DIR__ . '/../includes/header.php';
+// require_once __DIR__ . '/../includes/sidebar_teacher.php';
 
 global $pdo;
 $s = get_settings();
@@ -119,6 +119,11 @@ $comboOptions = $options->fetchAll();
 
 $sem1MPs = ['MP1','MP2','MP3','EXAM1'];
 $sem2MPs = ['MP4','MP5','MP6','EXAM2'];
+
+
+require_once __DIR__ . '/../includes/placeholder.php';
+require_once __DIR__ . '/../includes/header.php';
+require_once __DIR__ . '/../includes/sidebar_teacher.php';
 ?>
 <div class="p-4">
     <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
